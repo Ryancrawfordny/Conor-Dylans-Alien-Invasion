@@ -5,6 +5,6 @@ Have you ever wondered if anyone was abducted by an alien in your area? Well, no
 https://dev.socrata.com/foundry/azure-westeurope-prod.socrata.com/5pzx-id7h
 
 
-![alt text](https://i.imgur.com/OnufDOF.jpg)
+![alt text](https://i.imgur.com/DJDoFEg.jpg)
 
-![alt text](https://i.imgur.com/LtCj2nt.jpg)
+![alt text](https://i.imgur.com/gDSD30Z.jpg)
