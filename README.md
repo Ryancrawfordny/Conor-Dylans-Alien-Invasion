@@ -5,6 +5,6 @@ Have you ever wondered if anyone was abducted by an alien in hyour area? Well, n
 https://dev.socrata.com/foundry/azure-westeurope-prod.socrata.com/5pzx-id7h
 
 
-![Wireframe](https://imgur.com/a/xp0oQ0J)
+![alt text](https://imgur.com/a/xp0oQ0J)
 
-![Components Tree](https://imgur.com/a/gUZG3Q2)
+![alt text](https://imgur.com/a/gUZG3Q2)
