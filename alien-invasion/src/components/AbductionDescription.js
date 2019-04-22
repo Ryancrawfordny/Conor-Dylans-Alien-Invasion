@@ -1,26 +1,21 @@
-import React, { Component } from 'react';
+import React from 'react';
 
+const AbductionDescription = (props) => {
+    console.log(props.sighting)
 
-class AbductionDescription extends Component {
-    render() {
-        return (
-            <div>
-                <h2>
-                    Date: {this.props.date}
-                </h2>
-                <h2>
-                    BAC: {this.props.bac}
-                </h2>
-                <h2>
-                    Gibberish: {this.props.gibberish}
-                </h2>
-                <h2>
-                    Plausibility:{this.props.plausibility}
-                </h2>
-            </div>
+    return (
+        <div>
+            <p> Location: {props.sighting.incident_location}</p>
 
-        );
-    }
+            <p> BAC: {props.sighting.blood_alcohol_level}</p>
+            <p> Plausibility: {props.sighting.plausibility}</p>
+
+            <p> </p>
+        </div>
+    )
 }
+
+
+
 
 export default AbductionDescription;

@@ -1,49 +1,33 @@
 import React, { Component } from 'react';
 import './App.css';
-import AbductionDescription from './components/AbductionDescription';
+import AbductionLocation from './components/AbductionLocation';
 import Axios from 'axios';
-// import AbductionDescription from './components/AbductionDescription';
+import AlienMap from './components/AlienMap';
+
 // import AbductionLocation from './components/AbductionLocation';
 // import AbductionWitness from './components/AbuctionWitness';
 
 
 
-
 class App extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
-      zip: 0,
-      date: 0,
-      bac: 0,
-      gibberish: '',
-      plausibility: 0,
+      abductions: []
     };
   }
 
-  setZip(e) {
-    this.setState({
-      zip: e.target.value
-    })
-  }
 
   abductionInfoFunction() {
     let url = 'https://azure-westeurope-prod.socrata.com/resource/5pzx-id7h.json'
     Axios.get(url)
       .then(response => {
         this.setState({
-          data: response.data
+          abductions: response.data
         })
 
       })
-      .then((data) => {
-        this.setState({
-          date: data.date,
-          bac: data.bac,
-          gibberish: data.gibberish,
-          plausibility: data.plausibility,
-        })
-      })
+
       .catch((err) => {
         console.log(err.message)
       })
@@ -55,22 +39,28 @@ class App extends Component {
 
 
   render() {
+    console.log(this.state.abductions);
+
     return (
       <div className="App">
-        <input type="text" onChange={this.setZip} />
+        <div className="AlienMap">
+          <AlienMap component={AlienMap} abductions={this.state.abductions} />
+        </div>
+        <div className="mapContainer">
+
+          <h1 className="is-size-4"></h1>
+        </div>
+
+        <input type="text" onChange={this.setLocation} />
         <button onClick={this.abductionInfoFunction}>Find out where an abduction happened near you!</button>
-        <div><h1>Was contact made?</h1></div>
-        <AbductionDescription
-          date={this.state.date}
-          bac={this.state.bac}
-          gibberish={this.state.gibberish}
-          plausibility={this.state.plausibility}
-        />
+        <h1>Was contact made?</h1>
+        <AbductionLocation abductions={this.state.abductions} />
 
 
 
 
       </div>
+
     );
   }
 }
