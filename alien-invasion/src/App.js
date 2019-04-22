@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
-import './App.css';
+// import './App.css';
 import AbductionLocation from './components/AbductionLocation';
 import Axios from 'axios';
 import AlienMap from './components/AlienMap';
-
-// import AbductionLocation from './components/AbductionLocation';
-// import AbductionWitness from './components/AbuctionWitness';
-
 
 
 class App extends Component {
@@ -15,11 +11,12 @@ class App extends Component {
     this.state = {
       abductions: []
     };
+
   }
 
 
   abductionInfoFunction() {
-    let url = 'https://azure-westeurope-prod.socrata.com/resource/5pzx-id7h.json'
+    let url = 'https://azure-westeurope-prod.socrata.com/resource/5pzx-id7h.json?$limit=10'
     Axios.get(url)
       .then(response => {
         this.setState({
@@ -27,7 +24,6 @@ class App extends Component {
         })
 
       })
-
       .catch((err) => {
         console.log(err.message)
       })
@@ -48,7 +44,7 @@ class App extends Component {
         </div>
         <div className="mapContainer">
 
-          <h1 className="is-size-4"></h1>
+
         </div>
 
         <input type="text" onChange={this.setLocation} />

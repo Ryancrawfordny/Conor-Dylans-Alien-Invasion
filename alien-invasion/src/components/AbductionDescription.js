@@ -1,7 +1,7 @@
 import React from 'react';
 
 const AbductionDescription = (props) => {
-    console.log(props.sighting)
+    
 
     return (
         <div>
