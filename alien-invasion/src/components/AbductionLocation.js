@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
+// import React, { Component } from 'react';
 
-class AbductionLocation extends Component {
-    render() {
-        return (
-            <div>
+// class AbductionLocation extends Component {
+//     render() {
+//         return (
+//             <div>
                 
-            </div>
-        );
-    }
-}
+//             </div>
+//         );
+//     }
+// }
 
-export default AbductionLocation;
+// export default AbductionLocation;

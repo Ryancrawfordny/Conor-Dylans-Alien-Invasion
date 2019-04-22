@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
+// import React, { Component } from 'react';
 
-class AbuctionWitness extends Component {
-    render() {
-        return (
-            <div>
+// class AbuctionWitness extends Component {
+//     render() {
+//         return (
+//             <div>
                 
-            </div>
-        );
-    }
-}
+//             </div>
+//         );
+//     }
+// }
 
-export default AbuctionWitness;
+// export default AbuctionWitness;

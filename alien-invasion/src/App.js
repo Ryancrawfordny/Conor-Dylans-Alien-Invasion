@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-
 import './App.css';
 import AbductionDescription from './components/AbductionDescription';
+import Axios from 'axios';
 // import AbductionDescription from './components/AbductionDescription';
 // import AbductionLocation from './components/AbductionLocation';
 // import AbductionWitness from './components/AbuctionWitness';
@@ -28,10 +28,13 @@ class App extends Component {
   }
 
   abductionInfoFunction() {
-    url = 'https://azure-westeurope-prod.socrata.com/resource/5pzx-id7h.json'
-      fetch(url)
-      .then((response) => {
-        return response.data
+    let url = 'https://azure-westeurope-prod.socrata.com/resource/5pzx-id7h.json'
+    Axios.get(url)
+      .then(response => {
+        this.setState({
+          data: response.data
+        })
+
       })
       .then((data) => {
         this.setState({
@@ -56,7 +59,7 @@ class App extends Component {
       <div className="App">
         <input type="text" onChange={this.setZip} />
         <button onClick={this.abductionInfoFunction}>Find out where an abduction happened near you!</button>
-        <div>Was contact made?</div>
+        <div><h1>Was contact made?</h1></div>
         <AbductionDescription
           date={this.state.date}
           bac={this.state.bac}

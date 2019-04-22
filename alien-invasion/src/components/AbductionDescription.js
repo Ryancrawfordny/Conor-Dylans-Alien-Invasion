@@ -6,14 +6,16 @@ class AbductionDescription extends Component {
         return (
             <div>
                 <h2>
-                    date: {this.props.date}
-                </h2>
-                bac: {this.props.bac}
-                <h2>
-                    gibberish: {this.props.gibberish}
+                    Date: {this.props.date}
                 </h2>
                 <h2>
-                    plausibility:{this.props.plausibility}
+                    BAC: {this.props.bac}
+                </h2>
+                <h2>
+                    Gibberish: {this.props.gibberish}
+                </h2>
+                <h2>
+                    Plausibility:{this.props.plausibility}
                 </h2>
             </div>
 
