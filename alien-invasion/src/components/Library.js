@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 
 
 
-class AbductionsInfo extends Component {
+class LibraryInfo extends Component {
     render() {
         const { info } =this.props;
-        const displayName = `${info.incident_location}`
+        const displayName = `${info.name}`
         return (
             <div>
                 
@@ -14,4 +14,4 @@ class AbductionsInfo extends Component {
     }
 }
 
-export default AbductionsInfo;
+export default LibraryInfo;

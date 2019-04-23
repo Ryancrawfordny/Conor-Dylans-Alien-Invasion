@@ -1,26 +1,25 @@
 import React, { Component } from 'react';
 // import './App.css';
-import AbductionLocation from './components/AbductionLocation';
+import LibraryLocation from './components/LibraryLocation';
 import Axios from 'axios';
-import AlienMap from './components/AlienMap';
-
+import LibraryMap from './components/LibraryMap';
+//  import LibraryDescription from './components/LibraryDescription'
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      abductions: []
+      libraries: []
     };
 
   }
 
-
-  abductionInfoFunction() {
-    let url = 'https://azure-westeurope-prod.socrata.com/resource/5pzx-id7h.json?$limit=10'
+  LibraryInfoFunction() {
+    let url = 'https://data.cityofnewyork.us/resource/feuq-due4.json'
     Axios.get(url)
       .then(response => {
         this.setState({
-          abductions: response.data
+          libraries: response.data
         })
 
       })
@@ -30,17 +29,20 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.abductionInfoFunction()
+
+    this.LibraryInfoFunction()
   }
 
 
+
   render() {
-    console.log(this.state.abductions);
+    console.log(this.state.libraries);
+
 
     return (
       <div className="App">
-        <div className="AlienMap">
-          <AlienMap component={AlienMap} abductions={this.state.abductions} />
+        <div className="LibraryMap">
+          <LibraryMap component={LibraryMap} libraries={this.state.libraries} />
         </div>
         <div className="mapContainer">
 
@@ -48,9 +50,10 @@ class App extends Component {
         </div>
 
         <input type="text" onChange={this.setLocation} />
-        <button onClick={this.abductionInfoFunction}>Find out where an abduction happened near you!</button>
-        <h1>Was contact made?</h1>
-        <AbductionLocation abductions={this.state.abductions} />
+        <button onClick={this.LibraryInfoFunction}>Find Your Library</button>
+        <h1>Library List</h1>
+        {this.state.libraries.length ?
+          <LibraryLocation libraries={this.state.libraries} /> : null}
 
 
 

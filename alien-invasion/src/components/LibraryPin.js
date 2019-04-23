@@ -10,7 +10,7 @@ const pinStyle = {
   stroke: 'none'
 };
 
-class AlienPin extends PureComponent {
+class LibraryPin extends PureComponent {
 
   render() {
     const {size = 20, onClick} = this.props;
@@ -28,4 +28,4 @@ class AlienPin extends PureComponent {
   }
 }
 
-export default AlienPin;
+export default LibraryPin;
