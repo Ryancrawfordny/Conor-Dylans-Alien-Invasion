@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 import LibraryLocation from './components/LibraryLocation';
 import Axios from 'axios';
 import LibraryMap from './components/LibraryMap';
-//  import LibraryDescription from './components/LibraryDescription'
+
+
 
 class App extends Component {
   constructor() {
@@ -36,15 +37,17 @@ class App extends Component {
 
 
   render() {
-    console.log(this.state.libraries);
-
-
     return (
       <div className="App">
         <div className="LibraryMap">
           <LibraryMap component={LibraryMap} libraries={this.state.libraries} />
         </div>
         <div className="mapContainer">
+          <nav className="navbar is-primary" role="navigation" aria-label="main navigation">
+            <div className="navbar-brand">
+
+            </div>
+          </nav>
 
 
         </div>

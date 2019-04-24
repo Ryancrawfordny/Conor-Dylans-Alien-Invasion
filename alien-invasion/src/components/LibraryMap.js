@@ -16,8 +16,8 @@ class LibraryMap extends Component {
                 width: 500,
                 height: 500,
                 latitude: 40.730610,
-                longitude: -73.935242,
-                zoom: 11
+                longitude: -74.0060,
+                zoom: 10
             },
             popupInfo: null
         }
@@ -26,26 +26,30 @@ class LibraryMap extends Component {
     };
 
     _renderMarker(libraries, i) {
-        const lat = Number(libraries.the_geom.coordinates[0])
-        const long = Number(libraries.the_geom.coordinates[1])
-        console.log(long)
+        const lat = Number(libraries.the_geom.coordinates[1])
+        const long = Number(libraries.the_geom.coordinates[0])
+        
+        
         
         return (
             <Marker key={`libraries-${i}`} longitude={long} latitude={lat}>
                 <LibraryPin
-                    size={20}
+                    size={10}
                     onclick={() => this.setState({ popInfo: libraries })} />
             </Marker>
         );
     }
     _renderPopup() {
         const popupInfo = this.state;
+        console.log(popupInfo)
+        const long = popupInfo.longitude
+        const lat = popupInfo.latitude
 
         return (
             <Popup tipSize={5}
                 anchor="top"
-                longitude= "long"
-                latitude= "lat"
+                longitude= {long}
+                latitude= {lat}
                 onClose={() => this.setState({ popupInfo: null })}>
                 <LibraryLocation info={popupInfo} />
             </Popup>
@@ -66,13 +70,13 @@ class LibraryMap extends Component {
                 longitude={viewport.longitude}
                 zoom={viewport.zoom}
 
-                mapStyle="mapbox://styles/mapbox/light-v9"
+                mapStyle="mapbox://styles/mapbox/light-v8"
 
                 onViewportChange={(viewport) => this.setState({ viewport })}
                 mapboxApiAccessToken={MAPBOX_TOKEN}>
                 {libraries.map(this._renderMarker)}
 
-                {this.state.popupInfo && this._renderPopup}
+                {this.state.popupInfo && this._renderPopup()}
             </ReactMapGL>
 
         );

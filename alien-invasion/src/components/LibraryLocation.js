@@ -1,26 +1,33 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import LibraryDescription from './LibraryDescription'
 
 
 
 
-const LibraryLocation = (props) => {
+export default class LibraryLocation extends PureComponent {
+
+    render() {
+        const { info } = this.props
+        console.log(info)
+        
+        // const LibraryName = this.props.libraries
+        // console.log(LibraryName)
+
+        const libraries = (
+            <div>
+                
+                {this.props.libraries.map((library, index) =>
+                    <LibraryDescription key={index} library={library} />
+                )}
+            </div>
     
-    const sightings = (
-        <div>
-            
-            {props.libraries.map((libraries, index) =>
-                <LibraryDescription key={index} libraries={libraries} />
-            )}
-        </div>
+        )
+    
+        return (
+            <div>{libraries}</div>
+    
+        )
+    }
 
-    )
-
-    return (
-        <div>{sightings}</div>
-
-    )
 }
 
-
-export default LibraryLocation;

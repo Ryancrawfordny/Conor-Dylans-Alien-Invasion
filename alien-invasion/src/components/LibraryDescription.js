@@ -1,15 +1,11 @@
 import React from 'react';
 
 const LibraryDescription = (props) => {
-    
+    console.log(props.library)
 
     return (
         <div>
-            <p> Location: {props.libraries.streetname}</p>
-            <p> Name: {props.libraries.name}</p>
-            <p> Number: {props.libraries.housenum}</p>
-
-            <p> </p>
+            <p> Library List: {props.library.name}</p>
         </div>
     )
 }
