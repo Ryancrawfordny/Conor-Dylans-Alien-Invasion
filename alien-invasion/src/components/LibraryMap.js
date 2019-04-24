@@ -28,20 +28,20 @@ class LibraryMap extends Component {
     _renderMarker(libraries, i) {
         const lat = Number(libraries.the_geom.coordinates[1])
         const long = Number(libraries.the_geom.coordinates[0])
-        
+        // console.log(libraries)
         
         
         return (
             <Marker key={`libraries-${i}`} longitude={long} latitude={lat}>
                 <LibraryPin
                     size={10}
-                    onclick={() => this.setState({ popInfo: libraries })} />
+                    onclick={() => this.setState({ popupInfo: this.props.libraries })} />
             </Marker>
         );
     }
     _renderPopup() {
         const popupInfo = this.state;
-        console.log(popupInfo)
+        console.log(this.state.popupInfo)
         const long = popupInfo.longitude
         const lat = popupInfo.latitude
 
@@ -61,7 +61,7 @@ class LibraryMap extends Component {
     render() {
         const libraries = this.props.libraries;
         const { viewport } = this.state;
-
+        console.log(this.state.popupInfo)
         return (
             <ReactMapGL
                 width={viewport.width}
@@ -75,7 +75,7 @@ class LibraryMap extends Component {
                 onViewportChange={(viewport) => this.setState({ viewport })}
                 mapboxApiAccessToken={MAPBOX_TOKEN}>
                 {libraries.map(this._renderMarker)}
-
+                {console.log(this.state.popupInfo)}
                 {this.state.popupInfo && this._renderPopup()}
             </ReactMapGL>
 

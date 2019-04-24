@@ -1,7 +1,7 @@
 import React from 'react';
 
 const LibraryDescription = (props) => {
-    console.log(props.library)
+    // console.log(props.library)
 
     return (
         <div>

@@ -8,7 +8,7 @@ export default class LibraryLocation extends PureComponent {
 
     render() {
         const { info } = this.props
-        console.log(info)
+        // console.log(info)
         
         // const LibraryName = this.props.libraries
         // console.log(LibraryName)

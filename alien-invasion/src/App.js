@@ -15,8 +15,25 @@ class App extends Component {
 
   }
 
-  LibraryInfoFunction() {
-    let url = 'https://data.cityofnewyork.us/resource/feuq-due4.json'
+  LibraryInfoFunction=(e)=>{
+    let zip
+    let url
+    if(e){
+      e.preventDefault()
+      console.log('got event')
+
+      zip = e.target.userInput.value
+      url = `https://data.cityofnewyork.us/resource/feuq-due4.json?zip=${zip}`
+    }else{
+      
+      url = `https://data.cityofnewyork.us/resource/feuq-due4.json`
+      console.log('compdidmout')
+    }
+    // e.preventDefault()
+    
+    // console.log(e.target.userInput.value);
+    
+    
     Axios.get(url)
       .then(response => {
         this.setState({
@@ -51,9 +68,11 @@ class App extends Component {
 
 
         </div>
-
-        <input type="text" onChange={this.setLocation} />
-        <button onClick={this.LibraryInfoFunction}>Find Your Library</button>
+        <form onSubmit={this.LibraryInfoFunction}>
+          <input type="text" name="userInput"/>
+          <button type="submit">Find Your Library</button>
+        </form>
+        
         <h1>Library List</h1>
         {this.state.libraries.length ?
           <LibraryLocation libraries={this.state.libraries} /> : null}
