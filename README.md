@@ -1,15 +1,7 @@
-# Conor-Dylans-Alien-Invasion
+# New-York-Public-Library-Directory 
 
-Have you ever wondered if anyone was abducted by an alien in your area? Well, now you can find out. Tell us what state you live in to find out where the nearest abduction took place and learn about what happened. Will you be next?
-
-Let's also take a look at how close and Asteroid came to earth that day. Was it an asteroid, or a UFO? You decide?
-
-https://dev.socrata.com/foundry/azure-westeurope-prod.socrata.com/5pzx-id7h
+Search to find the closest NYPL branch near you. Take a look at all 216 locations in the city to find the best option for you.
 
 
-https://data.nasa.gov/Space-Science/Asteroids-NeoWs-API/73uw-d9i8
+https://data.cityofnewyork.us/resource/feuq-due4.json
 
-
-![alt text](https://i.imgur.com/DJDoFEg.jpg)
-
-![alt text](https://i.imgur.com/gDSD30Z.jpg)
