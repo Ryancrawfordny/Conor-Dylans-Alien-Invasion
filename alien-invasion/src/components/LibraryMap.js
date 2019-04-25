@@ -13,7 +13,7 @@ class LibraryMap extends Component {
 
         this.state = {
             viewport: {
-                width: 500,
+                width: 800,
                 height: 500,
                 latitude: 40.730610,
                 longitude: -74.0060,

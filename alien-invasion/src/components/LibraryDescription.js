@@ -6,6 +6,7 @@ const LibraryDescription = (props) => {
     return (
         <div>
             <p> Library List: {props.library.name}</p>
+            <p> City : {props.library.city}</p>
         </div>
     )
 }
